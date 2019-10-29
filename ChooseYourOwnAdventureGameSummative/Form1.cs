@@ -47,8 +47,8 @@ namespace ChooseYourOwnAdventureGameSummative
             else if (e.KeyCode == Keys.B)  //Green button press
             {
                 if (scene == 0) { scene = 1; }
-                else if (scene == 1) { scene =  }
-                else if (scene == 2) { scene =  }
+                else if (scene == 1) { scene = 0 }
+                else if (scene == 2) { scene = 98 }
                 else if (scene == 3) { scene =  }
                 else if (scene == 4) { scene =  }
                 else if (scene == 5) { scene =  }
