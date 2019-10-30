@@ -30,22 +30,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.outputLabel = new System.Windows.Forms.Label();
+            this.scoreLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // outputLabel
             // 
-            this.outputLabel.AutoSize = true;
-            this.outputLabel.Location = new System.Drawing.Point(215, 116);
+            this.outputLabel.Location = new System.Drawing.Point(167, 216);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(35, 13);
+            this.outputLabel.Size = new System.Drawing.Size(252, 108);
             this.outputLabel.TabIndex = 0;
             this.outputLabel.Text = "label1";
+            // 
+            // scoreLabel
+            // 
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.Location = new System.Drawing.Point(219, 93);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(33, 13);
+            this.scoreLabel.TabIndex = 1;
+            this.scoreLabel.Text = "score";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 440);
+            this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.outputLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -59,6 +69,7 @@
         #endregion
 
         private System.Windows.Forms.Label outputLabel;
+        private System.Windows.Forms.Label scoreLabel;
     }
 }
 
