@@ -21,18 +21,16 @@ namespace ChooseYourOwnAdventureGameSummative
         public Form1()
         {
             InitializeComponent();
+            outputLabel.Text = "You find yourself at the edge of a forest. You hear a noise inside the forest. " +
+                        "On the other side of the forest is a road.";
+            bOutputLabel.Text = "Go to the forest.";
+            mOutputLabel.Text = "Go to the road.";
             scoreLabel.Text = "" + scene;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (scene == 2) { scene = 97; }
-            else if (scene == 4) { scene = 97; }
-            else if (scene == 6) { scene = 97; }
-            else if (scene == 9) { scene = 97; }
-            else if (scene == 10) { scene = 97; }
-            else if (scene == 13) { scene = 97; }
-            else if (scene == 17) { scene = 97; }
+
 
             if (e.KeyCode == Keys.M)       //red button press
             {
@@ -43,36 +41,45 @@ namespace ChooseYourOwnAdventureGameSummative
                     if (percent >= 50) { scene = 2; }
                     else { scene = 3; }
                 }
+                else if (scene == 2) { scene = 0; }
                 else if (scene == 3)
                 {
                     percent = randGen.Next(0, 101);
                     if (percent >= 25) { scene = 4; }
                     else { scene = 5; }
                 }
+                else if (scene == 4) { scene = 0; }
                 else if (scene == 5) { scene = 8; }
+                else if (scene == 6) { scene = 0; }
                 else if (scene == 8)
                 {
                     percent = randGen.Next(0, 101);
                     if (percent >= 10) { scene = 9; }
                     else { scene = 0; }
                 }
+                else if (scene == 9) { scene = 0; }
+                else if (scene == 10) { scene = 0; }
                 else if (scene == 11) { scene = 12; }
                 else if (scene == 12) { scene = 13; }
+                else if (scene == 13) { scene = 0; }
                 else if (scene == 14) { scene = 13; }
                 else if (scene == 15) { scene = 13; }
-                else if (scene == 97) { scene = 0; }
+                else if (scene == 17) { scene = 0; }
                 else if (scene == 99) { scene = 0; }
             }
             else if (e.KeyCode == Keys.B)  //Green button press
             {
                 if (scene == 0) { scene = 1; }
                 else if (scene == 1) { scene = 0; }
+                else if (scene == 2) { scene = 98; }
                 else if (scene == 3)
                 {
                     percent = randGen.Next(0, 101);
                     if (percent >= 25) { scene = 6; }
                     else { scene = 7; }
                 }
+                else if (scene == 4) { scene = 98; }
+                else if (scene == 6) { scene = 98; }
                 else if (scene == 7) { scene = 8; }
                 else if (scene == 8)
                 {
@@ -80,8 +87,11 @@ namespace ChooseYourOwnAdventureGameSummative
                     if (percent >= 10) { scene = 10; }
                     else { scene = 99; }
                 }
+                else if (scene == 9) { scene = 98; }
+                else if (scene == 10) { scene = 98; }
                 else if (scene == 11) { scene = 14; }
                 else if (scene == 12) { scene = 14; }
+                else if (scene == 13) { scene = 98; }
                 else if (scene == 14) { scene = 1; }
                 else if (scene == 15)
                 {
@@ -90,8 +100,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     else { scene = 16; }
                 }
                 else if (scene == 16) { scene = 99; }
-                else if (scene == 97) { scene = 98; }
-                else if (scene == 99) { scene = 97; }
+                else if (scene == 17) { scene = 98; }
+                else if (scene == 99) { scene = 98; }
             }
             else if (e.KeyCode == Keys.Space)  //Blue Button
             {
@@ -110,8 +120,11 @@ namespace ChooseYourOwnAdventureGameSummative
                 case 0:  //start scene  
                     outputLabel.Text = "You find yourself at the edge of a forest. You hear a noise inside the forest. " +
                         "On the other side of the forest is a road.";
+                    bOutputLabel.Text = "Go to the forest.";
+                    //scenePicture.BackgroundImage = Properties.Resources.ForestRoad;
                     break;
                 case 1:
+                    //nButtonLabel.Visible = true;
                     break;
                 case 2:
                     break;
@@ -144,8 +157,6 @@ namespace ChooseYourOwnAdventureGameSummative
                 case 16:
                     break;
                 case 17:
-                    break;
-                case 97:
                     break;
                 case 98:
                     break;
