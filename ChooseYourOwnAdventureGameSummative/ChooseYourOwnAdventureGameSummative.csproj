@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloodyKnife.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CarManNight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CartoonStab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Face2FaceMan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ForestHouse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ForestRiver.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ForestRoad.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LargePit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManOnRoad.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManOnRoadBetter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManWalksPast.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThanksForPlaying.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YAY!.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YouDied.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
