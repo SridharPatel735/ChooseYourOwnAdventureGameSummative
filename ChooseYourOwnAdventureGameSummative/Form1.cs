@@ -31,7 +31,6 @@ namespace ChooseYourOwnAdventureGameSummative
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
 
-
             if (e.KeyCode == Keys.M)       //red button press
             {
                 if (scene == 0) { scene = 11; }
