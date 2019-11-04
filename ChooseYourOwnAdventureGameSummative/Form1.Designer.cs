@@ -155,6 +155,7 @@
             // scenePicture
             // 
             this.scenePicture.BackgroundImage = global::ChooseYourOwnAdventureGameSummative.Properties.Resources.ForestRoad;
+            this.scenePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.scenePicture.Location = new System.Drawing.Point(0, -3);
             this.scenePicture.Name = "scenePicture";
             this.scenePicture.Size = new System.Drawing.Size(557, 443);
