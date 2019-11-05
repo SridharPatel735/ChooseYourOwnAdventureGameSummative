@@ -122,5 +122,14 @@
   <ItemGroup>
     <None Include="Resources\YouDied.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forestAmbience.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Riversounds.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gameover.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
