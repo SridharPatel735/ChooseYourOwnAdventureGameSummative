@@ -191,6 +191,15 @@ namespace ChooseYourOwnAdventureGameSummative.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream nighttime_ambience {
+            get {
+                return ResourceManager.GetStream("nighttime_ambience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream Riversounds {
             get {
                 return ResourceManager.GetStream("Riversounds", resourceCulture);
@@ -204,6 +213,15 @@ namespace ChooseYourOwnAdventureGameSummative.Properties {
             get {
                 object obj = ResourceManager.GetObject("ThanksForPlaying", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Yay {
+            get {
+                return ResourceManager.GetStream("Yay", resourceCulture);
             }
         }
         

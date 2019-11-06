@@ -131,5 +131,14 @@
   <ItemGroup>
     <None Include="Resources\gameover.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nighttime ambience.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Happy.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yay.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

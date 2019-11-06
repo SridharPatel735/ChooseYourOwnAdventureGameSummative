@@ -23,6 +23,17 @@ namespace ChooseYourOwnAdventureGameSummative
         public Form1()
         {
             InitializeComponent();
+            SoundPlayer yay = new SoundPlayer(Properties.Resources.Yay);
+            SoundPlayer gameover = new SoundPlayer(Properties.Resources.gameover);
+            SoundPlayer riverSound = new SoundPlayer(Properties.Resources.Riversounds);
+            SoundPlayer forestSound = new SoundPlayer(Properties.Resources.forestAmbience);
+            SoundPlayer roadSound = new SoundPlayer(Properties.Resources.nighttime_ambience);
+            yay.Stop();
+            roadSound.Stop();
+            gameover.Stop();
+            riverSound.Stop();
+            forestSound.Play();
+
             nButtonLabel.Visible = false;
             spaceLabel.Visible = false;
             mButtonLabel.Visible = true;
@@ -33,14 +44,16 @@ namespace ChooseYourOwnAdventureGameSummative
             mOutputLabel.Text = "Go to the road.";
             spaceOutputLabel.Text = "";
             nOutputLabel.Text = "";
-            scoreLabel.Text = "" + scene;
+            Refresh();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            SoundPlayer yay = new SoundPlayer(Properties.Resources.Yay);
             SoundPlayer gameover = new SoundPlayer(Properties.Resources.gameover);
             SoundPlayer riverSound = new SoundPlayer(Properties.Resources.Riversounds);
             SoundPlayer forestSound = new SoundPlayer(Properties.Resources.forestAmbience);
+            SoundPlayer roadSound = new SoundPlayer(Properties.Resources.nighttime_ambience);
 
             if (e.KeyCode == Keys.M)       //red button press
             {
@@ -123,11 +136,12 @@ namespace ChooseYourOwnAdventureGameSummative
                 if (scene == 12) { scene = 13; }
             }
 
-            scoreLabel.Text = "" + scene;
 
             switch (scene)
             {
                 case 0:
+                    yay.Stop();
+                    roadSound.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Play();
@@ -144,6 +158,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     scenePicture.BackgroundImage = Properties.Resources.ForestRoad;
                     break;
                 case 1:
+                    yay.Stop();
+                    roadSound.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Play();
@@ -153,8 +169,6 @@ namespace ChooseYourOwnAdventureGameSummative
                     bButtonLabel.Visible = true;
                     scenePicture.BackgroundImage = Properties.Resources.LargePit;
                     outputLabel.Text = "You encounter a large pit. ";
-                    Refresh();
-                    Thread.Sleep(750);
                     outputLabel.Text += "Do you continue?";
                     bOutputLabel.Text = "No";
                     mOutputLabel.Text = "Yes";
@@ -162,6 +176,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     nOutputLabel.Text = "";
                     break;
                 case 2:
+                    yay.Stop();
+                    roadSound.Stop();
                     forestSound.Stop();
                     riverSound.Stop();
                     gameover.Play();
@@ -171,8 +187,12 @@ namespace ChooseYourOwnAdventureGameSummative
                     bButtonLabel.Visible = true;
                     scenePicture.BackgroundImage = Properties.Resources.YouDied;
                     outputLabel.Text = "You did not survive the jump, you died.";
+                    bOutputLabel.Text = "";
+                    mOutputLabel.Text = "";
+                    spaceOutputLabel.Text = "";
+                    nOutputLabel.Text = "";
                     Refresh();
-                    Thread.Sleep(750);
+                    Thread.Sleep(1250);
                     outputLabel.Text += " Play Again?";
                     bOutputLabel.Text = "No";
                     mOutputLabel.Text = "Yes";
@@ -180,6 +200,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     nOutputLabel.Text = "";
                     break;
                 case 3:
+                    yay.Stop();
+                    roadSound.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Play();
@@ -187,10 +209,14 @@ namespace ChooseYourOwnAdventureGameSummative
                     spaceLabel.Visible = false;
                     mButtonLabel.Visible = true;
                     bButtonLabel.Visible = true;
-                    scenePicture.BackgroundImage = Properties.Resources.BloodyKnife;
                     outputLabel.Text = "You survived the jump. Yay!!!";
+                    bOutputLabel.Text = "";
+                    mOutputLabel.Text = "";
+                    spaceOutputLabel.Text = "";
+                    nOutputLabel.Text = "";
                     Refresh();
-                    Thread.Sleep(750);
+                    Thread.Sleep(1250);
+                    scenePicture.BackgroundImage = Properties.Resources.BloodyKnife;
                     outputLabel.Text += " You come across a man with a bloody knife.";
                     bOutputLabel.Text = "Run away.";
                     mOutputLabel.Text = "Fight.";
@@ -198,6 +224,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     nOutputLabel.Text = "";
                     break;
                 case 4:
+                    yay.Stop();
+                    roadSound.Stop();
                     forestSound.Stop();
                     riverSound.Stop();
                     gameover.Play();
@@ -206,9 +234,13 @@ namespace ChooseYourOwnAdventureGameSummative
                     mButtonLabel.Visible = true;
                     bButtonLabel.Visible = true;
                     scenePicture.BackgroundImage = Properties.Resources.CartoonStab;
-                    outputLabel.Text = "The man with the knife kills you.";
+                    outputLabel.Text = "The man with the knife kills you. ";
+                    bOutputLabel.Text = "";
+                    mOutputLabel.Text = "";
+                    spaceOutputLabel.Text = "";
+                    nOutputLabel.Text = "";
                     Refresh();
-                    Thread.Sleep(750);
+                    Thread.Sleep(1250);
                     outputLabel.Text += "Play again?";
                     bOutputLabel.Text = "No";
                     mOutputLabel.Text = "Yes";
@@ -216,6 +248,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     nOutputLabel.Text = "";
                     break;
                 case 5:
+                    yay.Stop();
+                    roadSound.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Play();
@@ -231,6 +265,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     scenePicture.BackgroundImage = Properties.Resources.YAY_;
                     break;
                 case 6:
+                    yay.Stop();
+                    roadSound.Stop();
                     forestSound.Stop();
                     riverSound.Stop();
                     gameover.Play();
@@ -240,8 +276,12 @@ namespace ChooseYourOwnAdventureGameSummative
                     bButtonLabel.Visible = true;
                     scenePicture.BackgroundImage = Properties.Resources.CartoonStab;
                     outputLabel.Text = "The man with the knife kills you. ";
+                    bOutputLabel.Text = "";
+                    mOutputLabel.Text = "";
+                    spaceOutputLabel.Text = "";
+                    nOutputLabel.Text = "";
                     Refresh();
-                    Thread.Sleep(750);
+                    Thread.Sleep(1250);
                     outputLabel.Text += "Play again?";
                     bOutputLabel.Text = "No";
                     mOutputLabel.Text = "Yes";
@@ -249,6 +289,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     nOutputLabel.Text = "";
                     break;
                 case 7:
+                    yay.Stop();
+                    roadSound.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Play();
@@ -264,6 +306,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     scenePicture.BackgroundImage = Properties.Resources.YAY_;
                     break;
                 case 8:
+                    yay.Stop();
+                    roadSound.Stop();
                     gameover.Stop();
                     forestSound.Stop();
                     riverSound.Play();
@@ -279,6 +323,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     scenePicture.BackgroundImage = Properties.Resources.ForestRiver;
                     break;
                 case 9:
+                    yay.Stop();
+                    roadSound.Stop();
                     forestSound.Stop();
                     riverSound.Stop();
                     gameover.Play();
@@ -288,8 +334,12 @@ namespace ChooseYourOwnAdventureGameSummative
                     bButtonLabel.Visible = true;
                     scenePicture.BackgroundImage = Properties.Resources.YouDied;
                     outputLabel.Text = "You died due to starvation. ";
+                    bOutputLabel.Text = "";
+                    mOutputLabel.Text = "";
+                    spaceOutputLabel.Text = "";
+                    nOutputLabel.Text = "";
                     Refresh();
-                    Thread.Sleep(750);
+                    Thread.Sleep(1250);
                     outputLabel.Text += "Play again?";
                     bOutputLabel.Text = "No";
                     mOutputLabel.Text = "Yes";
@@ -297,6 +347,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     nOutputLabel.Text = "";
                     break;
                 case 10:
+                    yay.Stop();
+                    roadSound.Stop();
                     forestSound.Stop();
                     riverSound.Stop();
                     gameover.Play();
@@ -306,8 +358,12 @@ namespace ChooseYourOwnAdventureGameSummative
                     bButtonLabel.Visible = true;
                     scenePicture.BackgroundImage = Properties.Resources.YouDied;
                     outputLabel.Text = "You drowned in the river. ";
+                    bOutputLabel.Text = "";
+                    mOutputLabel.Text = "";
+                    spaceOutputLabel.Text = "";
+                    nOutputLabel.Text = "";
                     Refresh();
-                    Thread.Sleep(750);
+                    Thread.Sleep(1250);
                     outputLabel.Text += "Play again?";
                     bOutputLabel.Text = "No";
                     mOutputLabel.Text = "Yes";
@@ -315,9 +371,11 @@ namespace ChooseYourOwnAdventureGameSummative
                     nOutputLabel.Text = "";
                     break;
                 case 11:
+                    yay.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Stop();
+                    roadSound.Play();
                     nButtonLabel.Visible = false;
                     spaceLabel.Visible = false;
                     mButtonLabel.Visible = true;
@@ -330,9 +388,11 @@ namespace ChooseYourOwnAdventureGameSummative
                     scenePicture.BackgroundImage = Properties.Resources.ManOnRoadBetter;
                     break;
                 case 12:
+                    yay.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Stop();
+                    roadSound.Play();
                     nButtonLabel.Visible = true;
                     spaceLabel.Visible = true;
                     mButtonLabel.Visible = true;
@@ -345,6 +405,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     scenePicture.BackgroundImage = Properties.Resources.Face2FaceMan;
                     break;
                 case 13:
+                    yay.Stop();
+                    roadSound.Stop();
                     riverSound.Stop();
                     forestSound.Stop();
                     gameover.Play();
@@ -354,8 +416,12 @@ namespace ChooseYourOwnAdventureGameSummative
                     bButtonLabel.Visible = true;
                     scenePicture.BackgroundImage = Properties.Resources.YouDied;
                     outputLabel.Text = "You keep walking and down the desolate road and eventually die of starvation. ";
+                    bOutputLabel.Text = "";
+                    mOutputLabel.Text = "";
+                    spaceOutputLabel.Text = "";
+                    nOutputLabel.Text = "";
                     Refresh();
-                    Thread.Sleep(750);
+                    Thread.Sleep(1250);
                     outputLabel.Text += "Play again?";
                     bOutputLabel.Text = "No";
                     mOutputLabel.Text = "Yes";
@@ -363,24 +429,28 @@ namespace ChooseYourOwnAdventureGameSummative
                     nOutputLabel.Text = "";
                     break;
                 case 14:
+                    yay.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Stop();
+                    roadSound.Play();
                     nButtonLabel.Visible = false;
                     spaceLabel.Visible = true;
                     mButtonLabel.Visible = true;
                     bButtonLabel.Visible = true;
                     outputLabel.Text = "The person ignores you and walks past. What do you do now?";
-                    bOutputLabel.Text = "Walk back to the forest?";
-                    mOutputLabel.Text = "Keep walking?";
-                    spaceOutputLabel.Text = "Hitchhike for a ride?";
+                    bOutputLabel.Text = "Walk back to the forest.";
+                    mOutputLabel.Text = "Keep walking.";
+                    spaceOutputLabel.Text = "Hitchhike for a ride.";
                     nOutputLabel.Text = "";
                     scenePicture.BackgroundImage = Properties.Resources.ManWalksPast;
                     break;
                 case 15:
+                    yay.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Stop();
+                    roadSound.Play();
                     nButtonLabel.Visible = false;
                     spaceLabel.Visible = false;
                     mButtonLabel.Visible = true;
@@ -393,6 +463,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     scenePicture.BackgroundImage = Properties.Resources.CarManNight;
                     break;
                 case 16:
+                    yay.Stop();
+                    roadSound.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Stop();
@@ -408,6 +480,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     scenePicture.BackgroundImage = Properties.Resources.ForestHouse;
                     break;
                 case 17:
+                    yay.Stop();
+                    roadSound.Stop();
                     riverSound.Stop();
                     forestSound.Stop();
                     gameover.Play();
@@ -417,8 +491,12 @@ namespace ChooseYourOwnAdventureGameSummative
                     bButtonLabel.Visible = true;
                     scenePicture.BackgroundImage = Properties.Resources.YouDied;
                     outputLabel.Text = "The sketchy man kills you and takes your belongings. ";
+                    bOutputLabel.Text = "";
+                    mOutputLabel.Text = "";
+                    spaceOutputLabel.Text = "";
+                    nOutputLabel.Text = "";
                     Refresh();
-                    Thread.Sleep(750);
+                    Thread.Sleep(1250);
                     outputLabel.Text += "Play again?";
                     bOutputLabel.Text = "No";
                     mOutputLabel.Text = "Yes";
@@ -426,6 +504,8 @@ namespace ChooseYourOwnAdventureGameSummative
                     nOutputLabel.Text = "";
                     break;
                 case 98:
+                    yay.Stop();
+                    roadSound.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Stop();
@@ -444,17 +524,23 @@ namespace ChooseYourOwnAdventureGameSummative
                     this.Close();
                     break;
                 case 99:
+                    roadSound.Stop();
                     gameover.Stop();
                     riverSound.Stop();
                     forestSound.Stop();
+                    yay.Play();
                     nButtonLabel.Visible = false;
                     spaceLabel.Visible = false;
                     mButtonLabel.Visible = true;
                     bButtonLabel.Visible = true;
                     scenePicture.BackgroundImage = Properties.Resources.ForestHouse;
-                    outputLabel.Text = "You finally make it home after all this time. You win!"; ;
+                    outputLabel.Text = "You finally make it home after all this time. You win! ";
+                    bOutputLabel.Text = "";
+                    mOutputLabel.Text = "";
+                    spaceOutputLabel.Text = "";
+                    nOutputLabel.Text = "";
                     Refresh();
-                    Thread.Sleep(750);
+                    Thread.Sleep(1250);
                     outputLabel.Text += "Play again?";
                     bOutputLabel.Text = "No";
                     mOutputLabel.Text = "Yes";
