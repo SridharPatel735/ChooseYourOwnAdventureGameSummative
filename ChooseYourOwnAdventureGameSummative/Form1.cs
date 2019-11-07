@@ -9,13 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.Threading;
-
+/// <summary>
+/// Created by Sridhar and Calem
+/// November 2019
+/// Created an adventure game
+/// </summary>
 namespace ChooseYourOwnAdventureGameSummative
 {
     public partial class Form1 : Form
     {
-
-        //gameover.Play();
+        //Creating the varibles and random generator
         Random randGen = new Random();
         int scene = 0;
         int percent;
@@ -23,6 +26,7 @@ namespace ChooseYourOwnAdventureGameSummative
         public Form1()
         {
             InitializeComponent();
+            //The start scene and creating the sounds
             SoundPlayer yay = new SoundPlayer(Properties.Resources.Yay);
             SoundPlayer gameover = new SoundPlayer(Properties.Resources.gameover);
             SoundPlayer riverSound = new SoundPlayer(Properties.Resources.Riversounds);
@@ -49,12 +53,14 @@ namespace ChooseYourOwnAdventureGameSummative
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            //Creating the sounds
             SoundPlayer yay = new SoundPlayer(Properties.Resources.Yay);
             SoundPlayer gameover = new SoundPlayer(Properties.Resources.gameover);
             SoundPlayer riverSound = new SoundPlayer(Properties.Resources.Riversounds);
             SoundPlayer forestSound = new SoundPlayer(Properties.Resources.forestAmbience);
             SoundPlayer roadSound = new SoundPlayer(Properties.Resources.nighttime_ambience);
 
+            //Scene change
             if (e.KeyCode == Keys.M)       //red button press
             {
                 if (scene == 0) { scene = 11; }
@@ -90,6 +96,7 @@ namespace ChooseYourOwnAdventureGameSummative
                 else if (scene == 17) { scene = 0; }
                 else if (scene == 99) { scene = 0; }
             }
+            //Scene change
             else if (e.KeyCode == Keys.B)  //Green button press
             {
                 if (scene == 0) { scene = 1; }
@@ -126,17 +133,19 @@ namespace ChooseYourOwnAdventureGameSummative
                 else if (scene == 17) { scene = 98; }
                 else if (scene == 99) { scene = 98; }
             }
+            //Scene change
             else if (e.KeyCode == Keys.Space)  //Blue Button
             {
                 if (scene == 12) { scene = 14; }
                 else if (scene == 14) { scene = 15; }
             }
+            //Scene change
             else if (e.KeyCode == Keys.N)  //Yellow Button
             {
                 if (scene == 12) { scene = 13; }
             }
 
-
+            //Each scene and changes
             switch (scene)
             {
                 case 0:
