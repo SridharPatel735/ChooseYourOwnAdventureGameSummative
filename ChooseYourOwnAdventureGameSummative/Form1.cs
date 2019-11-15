@@ -22,16 +22,16 @@ namespace ChooseYourOwnAdventureGameSummative
         Random randGen = new Random();
         int scene = 0;
         int percent;
+        SoundPlayer yay = new SoundPlayer(Properties.Resources.Yay);
+        SoundPlayer gameover = new SoundPlayer(Properties.Resources.gameover);
+        SoundPlayer riverSound = new SoundPlayer(Properties.Resources.Riversounds);
+        SoundPlayer forestSound = new SoundPlayer(Properties.Resources.forestAmbience);
+        SoundPlayer roadSound = new SoundPlayer(Properties.Resources.nighttime_ambience);
 
         public Form1()
         {
             InitializeComponent();
             //The start scene and creating the sounds
-            SoundPlayer yay = new SoundPlayer(Properties.Resources.Yay);
-            SoundPlayer gameover = new SoundPlayer(Properties.Resources.gameover);
-            SoundPlayer riverSound = new SoundPlayer(Properties.Resources.Riversounds);
-            SoundPlayer forestSound = new SoundPlayer(Properties.Resources.forestAmbience);
-            SoundPlayer roadSound = new SoundPlayer(Properties.Resources.nighttime_ambience);
             yay.Stop();
             roadSound.Stop();
             gameover.Stop();
@@ -54,11 +54,6 @@ namespace ChooseYourOwnAdventureGameSummative
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             //Creating the sounds
-            SoundPlayer yay = new SoundPlayer(Properties.Resources.Yay);
-            SoundPlayer gameover = new SoundPlayer(Properties.Resources.gameover);
-            SoundPlayer riverSound = new SoundPlayer(Properties.Resources.Riversounds);
-            SoundPlayer forestSound = new SoundPlayer(Properties.Resources.forestAmbience);
-            SoundPlayer roadSound = new SoundPlayer(Properties.Resources.nighttime_ambience);
 
             //Scene change
             if (e.KeyCode == Keys.M)       //red button press
